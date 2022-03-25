@@ -3,8 +3,14 @@
 
 # In[18]:
 
-
 from selenium import webdriver
+import os
+
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
 from time import sleep
 from selenium.webdriver.common.keys import Keys
 from random import randint
@@ -25,7 +31,7 @@ class Bot():
         return "done"
 
     def login(self, username, password):
-        self.driver = webdriver.Chrome(executable_path='chromedriver.exe')
+        self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
         try:
             self.driver.get('https://instagram.com/')
             sleep(5)
