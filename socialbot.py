@@ -4,7 +4,6 @@
 # In[18]:
 
 from selenium import webdriver
-import os
 
 
 from time import sleep
