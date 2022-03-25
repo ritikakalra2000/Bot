@@ -61,9 +61,9 @@ class Item(BaseModel):
 @app.put("/insta")
 async def instag(item: Item):
     recieved=item.dict()
-    action=bot(recieved['user'],recieved['passw'],recieved['hasht'])
+    #action=bot(recieved['user'],recieved['passw'],recieved['hasht'])
     
-    return {action}
+    return {"done"}
 
 
 # In[ ]:
