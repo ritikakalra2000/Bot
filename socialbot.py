@@ -32,7 +32,7 @@ class Bot():
         return "done"
 
     def login(self, username, password):
-        self.driver =  webdriver.Chrome(execution_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
+        self.driver =  webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
         try:
             self.driver.get('https://instagram.com/')
             sleep(5)
