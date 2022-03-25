@@ -25,7 +25,7 @@ class Bot():
         return "done"
 
     def login(self, username, password):
-        self.driver = webdriver.Chrome(executable_path='C:/Users/Ritika/AppData/Local/chromedriver.exe')
+        self.driver = webdriver.Chrome(executable_path='chromedriver.exe')
         try:
             self.driver.get('https://instagram.com/')
             sleep(5)
